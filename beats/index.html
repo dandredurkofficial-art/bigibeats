@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats - Bigi Beats</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Custom Tailwind configuration (reused from index.html)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bigi-dark': '#1a1a1a',
+                        'bigi-gray': '#2a2a2a',
+                        'bigi-light-gray': '#b0b0b0',
+                        'bigi-accent': '#20c997', // A fresh teal/mint green for a classic feel
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'], // A modern yet classic sans-serif font
+                        heading: ['Montserrat', 'sans-serif'], // For bolder headlines
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts (Inter and Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-bigi-dark text-white font-sans antialiased">
+
+    <!-- Navigation Bar (reused from index.html) -->
+    <nav class="bg-bigi-gray p-4 shadow-xl fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Brand Name -->
+            <a href="/" class="text-3xl font-heading font-extrabold text-bigi-accent hover:text-white transition-colors duration-300">Bigi Beats</a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Home</a>
+                <a href="/beats/index.html" class="text-bigi-accent font-semibold transition-colors duration-300 text-lg font-medium">Beats</a> <!-- Active state for Beats -->
+                <a href="/about/index.html" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">About</a>
+                <a href="/contact/index.html" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-bigi-light-gray hover:text-bigi-accent focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-bigi-gray mt-4 p-4 rounded-lg shadow-lg">
+            <a href="/" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Home</a>
+            <a href="/beats/index.html" class="block py-2 text-bigi-accent font-semibold transition-colors duration-300 text-lg font-medium border-b border-gray-700">Beats</a>
+            <a href="/about/index.html" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">About</a>
+            <a href="/contact/index.html" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-16 md:py-24 px-4 pt-28 md:pt-32">
+        <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-center mb-12 text-bigi-accent">Explore All Bigi Beats</h1>
+
+        <!-- Beat Filters/Search -->
+        <div class="mb-12 flex flex-wrap justify-center gap-4">
+            <input type="text" placeholder="Search beats..." class="p-3 rounded-lg bg-bigi-gray border border-gray-700 text-white placeholder-bigi-light-gray focus:outline-none focus:ring-2 focus:ring-bigi-accent w-full md:w-auto flex-grow max-w-md">
+            <select class="p-3 rounded-lg bg-bigi-gray border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-bigi-accent">
+                <option value="">All Genres</option>
+                <option value="hiphop">Hip-Hop</option>
+                <option value="trap">Trap</option>
+                <option value="rnb">R&B</option>
+                <option value="lofi">Lo-Fi</option>
+                <option value="drill">Drill</option>
+            </select>
+            <select class="p-3 rounded-lg bg-bigi-gray border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-bigi-accent">
+                <option value="">Any BPM</option>
+                <option value="slow">60-90 BPM</option>
+                <option value="medium">90-120 BPM</option>
+                <option value="fast">120-150 BPM</option>
+            </select>
+        </div>
+
+        <!-- Beats Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Example Beat Card 1 -->
+            <div class="bg-bigi-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://source.unsplash.com/random/400x300/?hiphop,beat,dark" alt="Beat Cover" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-heading">"Urban Pulse"</h3>
+                    <p class="text-bigi-light-gray text-sm mb-2">Genre: Hip-Hop | BPM: 88</p>
+                    <p class="text-bigi-accent text-lg font-bold mb-4">$49.99</p>
+                    <audio controls class="w-full mb-4 rounded-md">
+                        <source src="your-beat-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-2 px-4 rounded-full transition-colors duration-300">Add to Cart</button>
+                        <a href="#" class="text-bigi-light-gray hover:text-bigi-accent text-sm transition-colors duration-300">Details <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Beat Card 2 -->
+            <div class="bg-bigi-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://source.unsplash.com/random/400x300/?trap,beat,neon" alt="Beat Cover" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-heading">"Neon Trap"</h3>
+                    <p class="text-bigi-light-gray text-sm mb-2">Genre: Trap | BPM: 145</p>
+                    <p class="text-bigi-accent text-lg font-bold mb-4">$59.99</p>
+                    <audio controls class="w-full mb-4 rounded-md">
+                        <source src="your-beat-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-2 px-4 rounded-full transition-colors duration-300">Add to Cart</button>
+                        <a href="#" class="text-bigi-light-gray hover:text-bigi-accent text-sm transition-colors duration-300">Details <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Beat Card 3 -->
+            <div class="bg-bigi-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://source.unsplash.com/random/400x300/?lofi,beat,chill" alt="Beat Cover" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-heading">"Chill Session"</h3>
+                    <p class="text-bigi-light-gray text-sm mb-2">Genre: Lo-Fi | BPM: 70</p>
+                    <p class="text-bigi-accent text-lg font-bold mb-4">$39.99</p>
+                    <audio controls class="w-full mb-4 rounded-md">
+                        <source src="your-beat-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-2 px-4 rounded-full transition-colors duration-300">Add to Cart</button>
+                        <a href="#" class="text-bigi-light-gray hover:text-bigi-accent text-sm transition-colors duration-300">Details <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Beat Card 4 -->
+            <div class="bg-bigi-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://source.unsplash.com/random/400x300/?drill,beat,city" alt="Beat Cover" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-heading">"Drill Anthem"</h3>
+                    <p class="text-bigi-light-gray text-sm mb-2">Genre: Drill | BPM: 130</p>
+                    <p class="text-bigi-accent text-lg font-bold mb-4">$54.99</p>
+                    <audio controls class="w-full mb-4 rounded-md">
+                        <source src="your-beat-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-2 px-4 rounded-full transition-colors duration-300">Add to Cart</button>
+                        <a href="#" class="text-bigi-light-gray hover:text-bigi-accent text-sm transition-colors duration-300">Details <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more beat cards here following the same structure -->
+            <div class="bg-bigi-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://source.unsplash.com/random/400x300/?rnb,beat,guitar" alt="Beat Cover" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-heading">"Soulful Riff"</h3>
+                    <p class="text-bigi-light-gray text-sm mb-2">Genre: R&B | BPM: 80</p>
+                    <p class="text-bigi-accent text-lg font-bold mb-4">$44.99</p>
+                    <audio controls class="w-full mb-4 rounded-md">
+                        <source src="your-beat-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-2 px-4 rounded-full transition-colors duration-300">Add to Cart</button>
+                        <a href="#" class="text-bigi-light-gray hover:text-bigi-accent text-sm transition-colors duration-300">Details <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-bigi-gray rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <img src="https://source.unsplash.com/random/400x300/?ambient,beat,space" alt="Beat Cover" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2 text-white font-heading">"Cosmic Drift"</h3>
+                    <p class="text-bigi-light-gray text-sm mb-2">Genre: Ambient | BPM: 65</p>
+                    <p class="text-bigi-accent text-lg font-bold mb-4">$34.99</p>
+                    <audio controls class="w-full mb-4 rounded-md">
+                        <source src="your-beat-audio-file.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-2 px-4 rounded-full transition-colors duration-300">Add to Cart</button>
+                        <a href="#" class="text-bigi-light-gray hover:text-bigi-accent text-sm transition-colors duration-300">Details <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer (reused from index.html) -->
+    <footer class="bg-bigi-dark py-8 text-center text-bigi-light-gray mt-16">
+        <div class="container mx-auto px-4">
+            <p>© 2023 Bigi Beats. All rights reserved.</p>
+            <div class="mt-6 space-x-6 text-2xl">
+                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-soundcloud"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle (reused from index.html) -->
+    <script>
+        document.getElementById('mobile-menu-button').onclick = function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        };
+    </script>
+</body>
+</html>
