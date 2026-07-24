@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Bigi Beats</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Custom Tailwind configuration (reused from index.html)
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'bigi-dark': '#1a1a1a',
+                            'bigi-gray': '#2a2a2a',
+                            'bigi-light-gray': '#b0b0b0',
+                            'bigi-accent': '#20c997', // A fresh teal/mint green for a classic feel
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'], // A modern yet classic sans-serif font
+                            heading: ['Montserrat', 'sans-serif'], // For bolder headlines
+                        }
+                    }
+                }
+            }
+        </script>
+        <!-- Google Fonts (Inter and Montserrat) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body class="bg-bigi-dark text-white font-sans antialiased">
+
+        <!-- Navigation Bar (reused from index.html) -->
+        <nav class="bg-bigi-gray p-4 shadow-xl fixed w-full z-50">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Brand Name -->
+                <a href="/" class="text-3xl font-heading font-extrabold text-bigi-accent hover:text-white transition-colors duration-300">Bigi Beats</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Home</a>
+                    <a href="/beats/index.html" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Beats</a>
+                    <a href="/about/index.html" class="text-bigi-accent font-semibold transition-colors duration-300 text-lg font-medium">About</a> <!-- Active state for About -->
+                    <a href="/contact/index.html" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-bigi-light-gray hover:text-bigi-accent focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden bg-bigi-gray mt-4 p-4 rounded-lg shadow-lg">
+                <a href="/" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Home</a>
+                <a href="/beats/index.html" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Beats</a>
+                <a href="/about/index.html" class="block py-2 text-bigi-accent font-semibold transition-colors duration-300 text-lg font-medium border-b border-gray-700">About</a>
+                <a href="/contact/index.html" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+            </div>
+        </nav>
+
+        <main class="container mx-auto py-16 md:py-24 px-4 pt-28 md:pt-32">
+            <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-center mb-12 text-bigi-accent">About Bigi Beats</h1>
+
+            <!-- Section 1: Our Story -->
+            <section class="bg-bigi-gray rounded-lg shadow-xl p-8 md:p-12 mb-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://source.unsplash.com/random/800x600/?music,studio,vintage" alt="Bigi Beats Studio" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Our Journey into Sound</h2>
+                        <p class="text-bigi-light-gray text-lg leading-relaxed mb-4">
+                            Bigi Beats began with a simple passion: to craft compelling soundscapes that empower artists. From humble home studio beginnings to a dedicated production house, our journey has been driven by a relentless pursuit of sonic excellence and a deep understanding of what makes a track truly stand out.
+                        </p>
+                        <p class="text-bigi-light-gray text-lg leading-relaxed">
+                            We believe that every artist deserves beats that resonate with their vision, providing the perfect foundation for their voice and message.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Our Mission -->
+            <section class="bg-bigi-dark rounded-lg p-8 md:p-12 mb-12 border border-bigi-gray">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 text-bigi-accent">Our Mission</h2>
+                    <p class="text-bigi-light-gray text-xl leading-relaxed">
+                        To provide artists worldwide with a diverse catalog of high-quality, inspiring instrumentals that fuel creativity and help them achieve their musical dreams. We aim to be more than just a beat store; we're a partner in your artistic journey.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3: Meet the Producer (You!) -->
+            <section class="bg-bigi-gray rounded-lg shadow-xl p-8 md:p-12">
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://source.unsplash.com/random/800x600/?producer,man,studio" alt="Bigi - The Producer" class="w-full h-auto rounded-lg shadow-lg object-cover">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Meet Bigi</h2>
+                        <p class="text-bigi-light-gray text-lg leading-relaxed mb-4">
+                            Hello! I'm Bigi, the heart and soul behind Bigi Beats. My passion for music started with [mention your first instrument, a specific artist, or a key moment]. Over the years, I've honed my craft, experimenting with various genres and production techniques to develop a unique sound.
+                        </p>
+                        <p class="text-bigi-light-gray text-lg leading-relaxed mb-4">
+                            I specialize in [mention your primary genres, e.g., "hard-hitting trap, soulful R&B, and atmospheric lo-fi beats"], always striving to deliver instrumentals that are both current and timeless. When I'm not in the studio, you can find me [mention a hobby or interest, e.g., "digging for vinyl, exploring new sound design techniques, or catching live shows"].
+                        </p>
+                        <p class="text-bigi-light-gray text-lg leading-relaxed">
+                            Let's create something incredible together.
+                        </p>
+                        <div class="mt-8 space-x-6 text-2xl">
+                            <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-soundcloud"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer (reused from index.html) -->
+        <footer class="bg-bigi-dark py-8 text-center text-bigi-light-gray mt-16">
+            <div class="container mx-auto px-4">
+                <p>© 2023 Bigi Beats. All rights reserved.</p>
+                <div class="mt-6 space-x-6 text-2xl">
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-soundcloud"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Mobile Menu Toggle (reused from index.html) -->
+        <script>
+            document.getElementById('mobile-menu-button').onclick = function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            };
+        </script>
+    </body>
+    </html>
