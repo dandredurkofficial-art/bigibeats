@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact - Bigi Beats</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Custom Tailwind configuration (reused from index.html)
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'bigi-dark': '#1a1a1a',
+                            'bigi-gray': '#2a2a2a',
+                            'bigi-light-gray': '#b0b0b0',
+                            'bigi-accent': '#20c997', // A fresh teal/mint green for a classic feel
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'], // A modern yet classic sans-serif font
+                            heading: ['Montserrat', 'sans-serif'], // For bolder headlines
+                        }
+                    }
+                }
+            }
+        </script>
+        <!-- Google Fonts (Inter and Montserrat) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body class="bg-bigi-dark text-white font-sans antialiased">
+
+        <!-- Navigation Bar (reused from index.html) -->
+        <nav class="bg-bigi-gray p-4 shadow-xl fixed w-full z-50">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Brand Name -->
+                <a href="/" class="text-3xl font-heading font-extrabold text-bigi-accent hover:text-white transition-colors duration-300">Bigi Beats</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Home</a>
+                    <a href="/beats/index.html" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">Beats</a>
+                    <a href="/about/index.html" class="text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium">About</a>
+                    <a href="/contact/index.html" class="text-bigi-accent font-semibold transition-colors duration-300 text-lg font-medium">Contact</a> <!-- Active state for Contact -->
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-bigi-light-gray hover:text-bigi-accent focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden bg-bigi-gray mt-4 p-4 rounded-lg shadow-lg">
+                <a href="/" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Home</a>
+                <a href="/beats/index.html" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Beats</a>
+                <a href="/about/index.html" class="block py-2 text-bigi-light-gray hover:text-bigi-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">About</a>
+                <a href="/contact/index.html" class="block py-2 text-bigi-accent font-semibold transition-colors duration-300 text-lg font-medium">Contact</a>
+            </div>
+        </nav>
+
+        <main class="container mx-auto py-16 md:py-24 px-4 pt-28 md:pt-32">
+            <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-center mb-12 text-bigi-accent">Get in Touch with Bigi Beats</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form Section -->
+                <section class="bg-bigi-gray rounded-lg shadow-xl p-8 md:p-10">
+                    <h2 class="text-3xl font-heading font-bold mb-6 text-white text-center lg:text-left">Send Us a Message</h2>
+                    <p class="text-bigi-light-gray text-center lg:text-left mb-6">
+                        Have a question about a beat, a collaboration inquiry, or just want to say hello? Use the form below!
+                    </p>
+                    <form action="YOUR_FORM_ENDPOINT_HERE" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-bigi-light-gray text-sm font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-bigi-dark border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-bigi-accent" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-bigi-light-gray text-sm font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 rounded-md bg-bigi-dark border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-bigi-accent" placeholder="john.doe@example.com" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-bigi-light-gray text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full p-3 rounded-md bg-bigi-dark border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-bigi-accent" placeholder="Beat Inquiry / Collaboration" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-bigi-light-gray text-sm font-medium mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="6" class="w-full p-3 rounded-md bg-bigi-dark border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-bigi-accent" placeholder="I'd love to..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-bigi-accent hover:bg-opacity-90 text-bigi-dark font-bold py-3 px-6 rounded-full text-lg transition-colors duration-300 transform hover:scale-105 shadow-xl">
+                            Send Message
+                        </button>
+                    </form>
+                    <p class="text-sm text-bigi-light-gray mt-6 text-center">
+                        *Note: This form requires a backend service (like Formspree.io or a custom script) to send emails. Replace `YOUR_FORM_ENDPOINT_HERE` in the form's `action` attribute.
+                    </p>
+                </section>
+
+                <!-- Other Contact Info Section -->
+                <section class="bg-bigi-dark rounded-lg p-8 md:p-10 border border-bigi-gray flex flex-col justify-center items-center text-center">
+                    <h2 class="text-3xl font-heading font-bold mb-6 text-bigi-accent">Direct Contact & Socials</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-bigi-light-gray text-lg mb-2">Prefer to reach out directly?</p>
+                            <a href="mailto:info@bigibeats.com" class="text-xl text-white hover:text-bigi-accent transition-colors duration-300 flex items-center justify-center">
+                                <i class="fas fa-envelope mr-3"></i> info@bigibeats.com
+                            </a>
+                        </div>
+                        <div>
+                            <p class="text-bigi-light-gray text-lg mb-2">Find us on social media:</p>
+                            <div class="mt-4 space-x-6 text-3xl">
+                                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-soundcloud"></i></a>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <p class="text-bigi-light-gray text-lg mb-2">Business Hours:</p>
+                            <p class="text-white text-xl">Mon - Fri: 9:00 AM - 5:00 PM (EST)</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer (reused from index.html) -->
+        <footer class="bg-bigi-dark py-8 text-center text-bigi-light-gray mt-16">
+            <div class="container mx-auto px-4">
+                <p>© 2023 Bigi Beats. All rights reserved.</p>
+                <div class="mt-6 space-x-6 text-2xl">
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="hover:text-bigi-accent transition-colors duration-300"><i class="fab fa-soundcloud"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Mobile Menu Toggle (reused from index.html) -->
+        <script>
+            document.getElementById('mobile-menu-button').onclick = function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            };
+        </script>
+    </body>
+    </html>
